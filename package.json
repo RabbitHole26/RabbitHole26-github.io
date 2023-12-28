@@ -1,16 +1,16 @@
 {
-  "name": "vite_bootstrap_boilerplate",
+  "name": "stara torba",
   "version": "1.0.0",
-  "description": "",
+  "description": "stronka dla mamy",
   "main": "main.js",
   "scripts": {
     "start": "vite",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build --emptyOutDir",
-    "publish": "npm run gh-pages -d dist",
+    "publish": "gh-pages -d dist",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "author": "",
+  "author": "RabbitHole26",
   "license": "ISC",
   "devDependencies": {
     "gh-pages": "^6.1.1",
