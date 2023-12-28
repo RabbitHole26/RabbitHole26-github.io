@@ -1,0 +1,163 @@
+// --------------------------------------------------------------------------------------
+// FONTS
+
+@font-face {
+  font-family: 'lato';
+  src: url(../public/fonts/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'playfair-display';
+  src: url(../public/fonts/playfair-display/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+// --------------------------------------------------------------------------------------
+// PARTIALS
+
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+// Import custom variables
+// I am struggling to update the custom variables, for the time being will override them in my CSS
+// @import "./custom-variables.scss";
+
+// Import navbar styles
+@import "./navbar.scss";
+
+// Import base styles
+@import "./base.scss";
+
+// --------------------------------------------------------------------------------------
+// GENERAL STYLING
+
+// TODO: setup variables here and in partials
+
+body {
+  background-color: #a7db96;
+
+  main {
+    position: relative;
+    margin: 0 10px;
+
+    #carousel {
+
+      .carousel-container {
+
+        .carousel-inner {
+
+          .carousel-item {
+
+            img {
+              height: calc(100vh - 117px);
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+
+    #gallery {
+  
+      .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+  
+        img {
+          max-height: 140px;
+          width: 100%;
+          object-fit: cover;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .viewer-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(37, 37, 37, 0.95);
+        z-index: 9999;
+
+        .image {
+          max-height: 90%;
+          max-width: 90%;
+          object-fit: cover;
+          display: block;
+        }
+
+        [class^="button"] {
+          color: #b219e6;
+          font-size: 2rem;
+          transition: all 0.15s ease-in-out;
+          text-shadow: 
+          0 0 10px rgba(37, 37, 37, 1),
+          1px 1px 3px rgba(37, 37, 37, 1),
+          -1px -1px 3px rgba(37, 37, 37, 1);
+
+          &:hover {
+            transform: scale(1.10);
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+
+        .button-previous {
+          margin-left: 1rem;
+        }
+
+        .button-next {
+          margin-right: 1rem;
+        }
+      }
+
+      .viewer-container.show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    #contact-static {
+      margin-right: 3.5rem;
+    }
+
+    #contact-sticky {
+      width: fit-content;
+      margin-left: auto;
+
+      .contact-sticky-container {
+        font-size: 3rem;
+
+        .mail-to {
+          color: #e64c19;
+          text-shadow: 
+          0 0 10px rgba(37, 37, 37, 1),
+          1px 1px 3px rgba(37, 37, 37, 1),
+          -1px -1px 3px rgba(37, 37, 37, 1);
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 150px;
+    background-color: #4de619;
+    
+    .footer-container {
+      margin:  0 25px;
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+}
